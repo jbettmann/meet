@@ -4,7 +4,7 @@
 
 This is a Career Foundry project to build a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
 
-## Key Features: #### [(see breakdown in User Story and Scenarios)](https://github.com/jbettmann/meet#user-stories-and-scenarios)
+## Key Features:
 
 - Filter events by city.
 - Show/hide event details.
@@ -12,6 +12,7 @@ This is a Career Foundry project to build a serverless, progressive web applicat
 - Use the app when offline.
 - Add an app shortcut to the home screen.
 - View a chart showing the number of upcoming events by city.
+  [(further breakdown in User Story and Scenarios)](https://github.com/jbettmann/meet#user-story-and-scenarios)
 
 ## Technical Requirements:
 
@@ -32,7 +33,7 @@ This project must meet all the following requirements to be approved and conside
 - App must be covered by tests with a coverage rate >= 90%.
 - Monitored using an online monitoring tool.
 
-## User Stories and Scenarios
+## User Story and Scenarios
 
 ### Feature 1: Filter Events by City
 
@@ -46,18 +47,18 @@ so that I can see which events are happening in that city
 
 **Scenario 1: When user hasn’t searched for a city, show upcoming events from all cities.** <br/>
 Given user hasn’t search for any city<br/>
-When the user opens the app
-Then the user should see a list of all upcoming events
+When the user opens the app<br/>
+Then the user should see a list of all upcoming events<br/>
 
-**Scenario 2: User should see a list of suggestions when they search for a city.:**
-Given the main page is open
-When user starts typing in the city textbook
-Then the user should see a list of cites (suggestions) that match why they’ve typed
+**Scenario 2: User should see a list of suggestions when they search for a city.:**<br/>
+Given the main page is open<br/>
+When user starts typing in the city textbook<br/>
+Then the user should see a list of cites (suggestions) that match why they’ve typed<br/>
 
-**Scenario 3: User can select a city from the suggested list:**
-Given the user was typing “Denver” in the city textbook and the list of suggested cites is showing
-When the user selects a city (Denver) from the list
-Then their city should be changed to that city (Denver) and the user should receive a list of upcoming events in that city.
+**Scenario 3: User can select a city from the suggested list:**<br/>
+Given the user was typing “Denver” in the city textbook and the list of suggested cites is showing<br/>
+When the user selects a city (Denver) from the list<br/>
+Then their city should be changed to that city (Denver) and the user should receive a list of upcoming events in that city.<br/>
 
 ### Feature 2: Show/Hide an Event's Details
 
@@ -65,24 +66,24 @@ Then their city should be changed to that city (Denver) and the user should rece
 
 As a user
 I should be able to see/hide a events details
-So that I can see the details of that given event
+so that I can see the details of that given event
 
 #### Scenarios:
 
-**Scenario 1: An event element is collapsed by default:**
-Given the user had chosen a city
-When the user is viewing all the events from that city
-Then the events “show details” should be collapsed by default for all events
+**Scenario 1: An event element is collapsed by default:**<br/>
+Given the user had chosen a city<br/>
+When the user is viewing all the events from that city<br/>
+Then the events “show details” should be collapsed by default for all events<br/>
 
-**Scenario 2: User can expand an event to see its details:**
-Given all event for that city where displayed
-When the user clicks on the “more details” button of a specific event they’re interested in
-Then the user can view more information about that specific event
+**Scenario 2: User can expand an event to see its details:**<br/>
+Given all event for that city where displayed<br/>
+When the user clicks on the “more details” button of a specific event they’re interested in<br/>
+Then the user can view more information about that specific event<br/>
 
-**Scenario 3: User can collapse an event to hide its details:**
-Given events were shown to the user and they choice an event to view “more details” on
-When the user clicks on the “hide details” button of that specific event
-Then the information should be hidden from the user.
+**Scenario 3: User can collapse an event to hide its details:**<br/>
+Given events were shown to the user and they choice an event to view “more details” on<br/>
+When the user clicks on the “hide details” button of that specific event<br/>
+Then the information should be hidden from the user.<br/>
 
 ### Feature 3: Specify the Number of Events
 
@@ -90,19 +91,19 @@ Then the information should be hidden from the user.
 
 As a user
 I should be able to see the number of events
-So that I can see how many event are happening in that city
+so that I can see how many event are happening in that city
 
 #### Scenarios:
 
-**Scenario 1: When user hasn’t specified a number, 32 is the default number:**
-Given the user didn’t specify the number of event to view
-When they select a city
-Then the default number of events should be 32
+**Scenario 1: When user hasn’t specified a number, 32 is the default number:**<br/>
+Given the user didn’t specify the number of event to view<br/>
+When they select a city<br/>
+Then the default number of events should be 32<br/>
 
-**Scenario 2: User can change the number of events they want to see:**
-Given the user had selected a city
-When they specify the number of events they want to view
-Then the number of events specified to see is the number events displayed.
+**Scenario 2: User can change the number of events they want to see:**<br/>
+Given the user had selected a city<br/>
+When they specify the number of events they want to view<br/>
+Then the number of events specified to see is the number events displayed.<br/>
 
 ### Feature 4: Use App when Offline
 
@@ -110,19 +111,19 @@ Then the number of events specified to see is the number events displayed.
 
 As a user
 I should be able to use the app offline
-So that I can use it at anytime.
+so that I can use it at anytime.
 
 #### Scenarios:
 
-**Scenario 1: Show cached data when there’s no internet connection:**
-Given there is no Internet connection
-When user is using the app
-Then only show cached data
+**Scenario 1: Show cached data when there’s no internet connection:**<br/>
+Given there is no Internet connection<br/>
+When user is using the app<br/>
+Then only show cached data<br/>
 
-**Scenario 2: Show error when user changes the settings (city, time range):**
-Given there is no interest connection
-When the user changes the settings of search (city, time range)
-Then show an error informing them they are offline.
+**Scenario 2: Show error when user changes the settings (city, time range):**<br/>
+Given there is no interest connection<br/>
+When the user changes the settings of search (city, time range)<br/>
+Then show an error informing them they are offline.<br/>
 
 ### Feature 5: Display Chart of the Number of Upcoming Events by City
 
@@ -130,14 +131,14 @@ Then show an error informing them they are offline.
 
 As a user
 I should be able to see a chart showing the number of upcoming events by city
-So that I can see which city have the most events happening.
+so that I can see which city have the most events happening.
 
 #### Scenario:
 
-**Scenario 1: Show a chart with the number of upcoming events in each city:**
-Given the user didn’t select a specific city and was looking for upcoming event
-When they select “View all events”
-Then they can see a chart with all the event in each city.
+**Scenario 1: Show a chart with the number of upcoming events in each city:**<br/>
+Given the user didn’t select a specific city and was looking for upcoming event<br/>
+When they select “View all events”<br/>
+Then they can see a chart with all the event in each city.<br/>
 
 ### Feature 6: App Shortcut to User's Home Screen
 
@@ -145,6 +146,6 @@ Then they can see a chart with all the event in each city.
 
 As a user
 I should be able to have a shortcut to home screen
-So that it only takes me one click to get back to home screen
+so that it only takes me one click to get back to home screen
 
 **_No Scenario for this due to feature not testable. This feature is handled by the OS._**
