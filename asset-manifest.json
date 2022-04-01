@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/jbettmann/meet.git/static/css/main.073c9b0a.css",
+    "main.js": "/jbettmann/meet.git/static/js/main.85575462.js",
+    "static/js/377.dda790c9.chunk.js": "/jbettmann/meet.git/static/js/377.dda790c9.chunk.js",
+    "service-worker.js": "/jbettmann/meet.git/service-worker.js",
+    "static/media/logo.svg": "/jbettmann/meet.git/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/jbettmann/meet.git/index.html",
+    "main.073c9b0a.css.map": "/jbettmann/meet.git/static/css/main.073c9b0a.css.map",
+    "main.85575462.js.map": "/jbettmann/meet.git/static/js/main.85575462.js.map",
+    "377.dda790c9.chunk.js.map": "/jbettmann/meet.git/static/js/377.dda790c9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.85575462.js"
+  ]
+}
