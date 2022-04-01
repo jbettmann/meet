@@ -17,7 +17,7 @@ This is a Career Foundry project to build a serverless, progressive web applicat
 - Use the app when offline.
 - Add an app shortcut to the home screen.
 - View a chart showing the number of upcoming events by city.<br/>
-  [(breakdown in User Story and Scenarios)](https://github.com/jbettmann/meet#user-story-and-scenarios)
+  [(breakdown in User Story and Scenarios)](https://github.com/jbettmann/meet#user-stories-and-scenarios)
 
 ## Technical Requirements:
 
@@ -38,7 +38,7 @@ This project must meet all the following requirements to be approved and conside
 - App must be covered by tests with a coverage rate >= 90%.
 - Monitored using an online monitoring tool.
 
-## User Story and Scenarios
+## User Stories and Scenarios
 
 ### Feature 1: Filter Events by City
 
