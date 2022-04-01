@@ -4,6 +4,11 @@
 
 This is a Career Foundry project to build a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
 
+## Build With:
+
+- React
+- CRA
+
 ## Key Features:
 
 - Filter events by city.
@@ -11,8 +16,8 @@ This is a Career Foundry project to build a serverless, progressive web applicat
 - Specify number of events.
 - Use the app when offline.
 - Add an app shortcut to the home screen.
-- View a chart showing the number of upcoming events by city.
-  [(further breakdown in User Story and Scenarios)](https://github.com/jbettmann/meet#user-story-and-scenarios)
+- View a chart showing the number of upcoming events by city.<br/>
+  [(breakdown in User Story and Scenarios)](https://github.com/jbettmann/meet#user-story-and-scenarios)
 
 ## Technical Requirements:
 
