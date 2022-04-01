@@ -1,10 +1,10 @@
 # meet app
 
-### Description
+## Description
 
 This is a Career Foundry project to build a serverless, progressive web application (PWA) with React using a test-driven development (TDD) technique. The application uses the Google Calendar API to fetch upcoming events.
 
-### Key Features: [(see User Story and Scenarios)](### User Stories and Scenarios)
+## Key Features: [(see breakdown in User Story and Scenarios)](https://github.com/jbettmann/meet#user-stories-and-scenarios)
 
 - Filter events by city.
 - Show/hide event details.
@@ -13,7 +13,7 @@ This is a Career Foundry project to build a serverless, progressive web applicat
 - Add an app shortcut to the home screen.
 - View a chart showing the number of upcoming events by city.
 
-### Technical Requirements:
+## Technical Requirements:
 
 This project must meet all the following requirements to be approved and considered complete:
 
@@ -32,20 +32,20 @@ This project must meet all the following requirements to be approved and conside
 - App must be covered by tests with a coverage rate >= 90%.
 - Monitored using an online monitoring tool.
 
-### User Stories and Scenarios
+## User Stories and Scenarios
 
-#### Feature 1: Filter Events by City
+### Feature 1: Filter Events by City
 
-##### User Story:
+#### User Story:
 
 As a user
 I should be able to filter events by city
-So that I can see which events are happening in that city
+so that I can see which events are happening in that city
 
-##### Scenarios:
+#### Scenarios:
 
-**Scenario 1: When user hasn’t searched for a city, show upcoming events from all cities.**
-Given user hasn’t search for any city
+**Scenario 1: When user hasn’t searched for a city, show upcoming events from all cities.** <br/>
+Given user hasn’t search for any city<br/>
 When the user opens the app
 Then the user should see a list of all upcoming events
 
@@ -59,15 +59,15 @@ Given the user was typing “Denver” in the city textbook and the list of sugg
 When the user selects a city (Denver) from the list
 Then their city should be changed to that city (Denver) and the user should receive a list of upcoming events in that city.
 
-#### Feature 2: Show/Hide an Event's Details
+### Feature 2: Show/Hide an Event's Details
 
-##### User Story:
+#### User Story:
 
 As a user
 I should be able to see/hide a events details
 So that I can see the details of that given event
 
-##### Scenarios:
+#### Scenarios:
 
 **Scenario 1: An event element is collapsed by default:**
 Given the user had chosen a city
@@ -84,15 +84,15 @@ Given events were shown to the user and they choice an event to view “more det
 When the user clicks on the “hide details” button of that specific event
 Then the information should be hidden from the user.
 
-#### Feature 3: Specify the Number of Events
+### Feature 3: Specify the Number of Events
 
-##### User Story:
+#### User Story:
 
 As a user
 I should be able to see the number of events
 So that I can see how many event are happening in that city
 
-##### Scenarios:
+#### Scenarios:
 
 **Scenario 1: When user hasn’t specified a number, 32 is the default number:**
 Given the user didn’t specify the number of event to view
@@ -104,15 +104,15 @@ Given the user had selected a city
 When they specify the number of events they want to view
 Then the number of events specified to see is the number events displayed.
 
-#### Feature 4: Use App when Offline
+### Feature 4: Use App when Offline
 
-##### User Story:
+#### User Story:
 
 As a user
 I should be able to use the app offline
 So that I can use it at anytime.
 
-##### Scenarios:
+#### Scenarios:
 
 **Scenario 1: Show cached data when there’s no internet connection:**
 Given there is no Internet connection
@@ -124,24 +124,24 @@ Given there is no interest connection
 When the user changes the settings of search (city, time range)
 Then show an error informing them they are offline.
 
-#### Feature 5: Display Chart of the Number of Upcoming Events by City
+### Feature 5: Display Chart of the Number of Upcoming Events by City
 
-##### User Story:
+#### User Story:
 
 As a user
 I should be able to see a chart showing the number of upcoming events by city
 So that I can see which city have the most events happening.
 
-##### Scenario:
+#### Scenario:
 
 **Scenario 1: Show a chart with the number of upcoming events in each city:**
 Given the user didn’t select a specific city and was looking for upcoming event
 When they select “View all events”
 Then they can see a chart with all the event in each city.
 
-#### Feature 6: App Shortcut to User's Home Screen
+### Feature 6: App Shortcut to User's Home Screen
 
-##### User Story:
+#### User Story:
 
 As a user
 I should be able to have a shortcut to home screen
