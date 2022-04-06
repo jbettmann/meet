@@ -6,7 +6,6 @@ import CitySearch from '../CitySearch';
 import NumberOfEvents from '../NumberOfEvents';
 import { mockData }from '../mockData';
 import { extractLocations, getEvents } from '../api'; 
-import { getCalendarEvents } from '../../auth-server/handler';
 
 describe('<App /> component', () => {
   let AppWrapper;

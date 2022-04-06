@@ -18,10 +18,10 @@ class Event extends Component {
     
     return (
       <div className='event'>
-        <p className='name'>{/* {event.summary} */}</p>
-        <p className='start-date'>{/*{event.start.dateTime} {event.start.timeZone}*/}</p>
-        <p className='location'>{/*{event.location}*/}</p>
-        <p className='description'>{/*{event.description}*/}</p>
+        <p className='name'>{event.summary}</p>
+        <p className='start-date'>{event.start.dateTime} {event.start.timeZone}</p>
+        <p className='location'>{event.location}</p>
+        <p className='description'>{event.description}</p>
         <button className='details-btn'
         onClick={this.handleDetailButton}>Show Details</button>
       </div>
