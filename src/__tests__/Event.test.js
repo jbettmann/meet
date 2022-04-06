@@ -22,7 +22,7 @@ describe('<Event /> component', () => {
   });
 
   test('render link to event', () => {
-    expect(EventWrapper.find('.event-link')).toHaveLength(1);
+    expect(EventWrapper.find('.name')).toHaveLength(1);
   });
 
   test('render description about event', () => {
@@ -34,18 +34,18 @@ describe('<Event /> component', () => {
   });
 
   test('render details button', () => {
-    expect(EventWrapper.find('.details-button')).toHaveLength(1);
+    expect(EventWrapper.find('.details-btn')).toHaveLength(1);
   });
 
   test('render details when show details button is clicked', () => {
     EventWrapper.setState({ collapsed: true });
-    EventWrapper.find('.details-button').simulate('click')
+    EventWrapper.find('.details-btn').simulate('click')
     expect(EventWrapper.state('collapsed')).toBe(false);
   });
 
   test('hide details when button is clicked again', () => {
     EventWrapper.setState({ collapsed: false });
-    EventWrapper.find('.details-button').simulate('click')
+    EventWrapper.find('.details-btn').simulate('click')
     expect(EventWrapper.state('collapsed')).toBe(true);
   });
   

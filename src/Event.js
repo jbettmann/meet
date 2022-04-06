@@ -14,14 +14,15 @@ class Event extends Component {
   }
 
   render() {
-    const { events } = this.props;
+    const { event } = this.props;
+    
     return (
       <div className='event'>
-        <div className='start-date'>{events.start}</div>
-        <div className='location'>{events.location}</div>
-        <div className='event-link'>{events.htmlLink}</div>
-        <div className='description'>{events.description}</div>
-        <button className='details-button'
+        <p className='name'>{/* {event.summary} */}</p>
+        <p className='start-date'>{/*{event.start.dateTime} {event.start.timeZone}*/}</p>
+        <p className='location'>{/*{event.location}*/}</p>
+        <p className='description'>{/*{event.description}*/}</p>
+        <button className='details-btn'
         onClick={this.handleDetailButton}>Show Details</button>
       </div>
     );
