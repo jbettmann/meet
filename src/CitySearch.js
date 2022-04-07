@@ -33,6 +33,7 @@ class CitySearch extends Component {
           type="text"
           className="city"
           value={this.state.query}
+          placeholder="Search for City"
           onChange={this.handleInputChange}
           onFocus={() => { this.setState({ showSuggestions: true }) }}
         />
