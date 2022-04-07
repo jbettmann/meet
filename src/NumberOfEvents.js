@@ -30,10 +30,10 @@ render () {
       </div>
       <p>Number of Events</p>
       <input 
-      type='number'
-      className='inputNumberOfEvents'
-      onChange={this.handleInputChanged}
-      value={this.state.numberOfEvents}
+        type='number'
+        className='inputNumberOfEvents'
+        onChange={this.handleInputChanged}
+        value={this.state.numberOfEvents}
       />
     </div>
   )
