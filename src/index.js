@@ -5,6 +5,10 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+import * as atatus from 'atatus-spa';
+
+atatus.config('cb505814a18e4aee89a7b8b71c67650a').install();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -21,3 +25,4 @@ serviceWorkerRegistration.unregister();
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
