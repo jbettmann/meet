@@ -4,6 +4,7 @@ class CitySearch extends Component {
   state = { 
     query: '',
     suggestions: [],
+    numberOfEvents: 32,
     showSuggestions: undefined
   }
 
@@ -15,6 +16,7 @@ class CitySearch extends Component {
     this.setState({ 
       query: value,
       suggestions,
+      numberOfEvents: this.state.numberOfEvents
      });
   }
 
