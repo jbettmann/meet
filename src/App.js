@@ -38,7 +38,7 @@ class App extends Component {
     
   };
 
-  updateEvents = (location, eventCount) => {
+  updateEvents = (location) => {
     getEvents().then((events) => {
       const locationEvents =
         location === "all"
@@ -48,7 +48,7 @@ class App extends Component {
         this.setState({
           events: locationEvents.slice(0, this.state.numberOfEvents),
           currentLocation: location,
-          numberOfEvents: eventCount
+          
         });
       }
     });
