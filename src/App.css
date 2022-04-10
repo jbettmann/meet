@@ -52,6 +52,7 @@ input[type="number"] {
   flex-basis: 300px;
   max-width: 300px;
   margin: auto;
+  margin-top: 10px;
   position: relative;
 }
 
@@ -240,13 +241,4 @@ input[type="number"] {
     min-width: auto;
     margin: 0 auto;
   }
-}
-
-
-@media only screen and (max-width: 992px) {
-  
-  .city {
-    margin-top: 10px;
-  }
-
 }
