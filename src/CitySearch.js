@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { InfoAlert } from './Alert';
 
 class CitySearch extends Component {
   state = { 
@@ -10,20 +11,32 @@ class CitySearch extends Component {
 
   handleInputChange = (event) => {
     const value = event.target.value;
+    this.setState({showSuggestions:true});
     const suggestions = this.props.locations.filter((location) => {
       return location.toUpperCase().indexOf(value.toUpperCase()) > -1;
     });
-    this.setState({ 
-      query: value,
-      suggestions,
-      numberOfEvents: this.state.numberOfEvents
-     });
+    if (suggestions.length === 0) {
+      this.setState({
+        query: value,
+        infoText: 'We were unable to find that city. Please try another city',
+        showSuggestions: false,
+      });
+    } else {
+      this.setState({ 
+        query: value,
+        suggestions,
+        infoText: '',
+        numberOfEvents: this.state.numberOfEvents
+      });
+    }
   }
 
   handleItemClicked = (suggestion) => {
     this.setState({
       query: suggestion,
-      showSuggestions: false
+      suggestion: [],
+      showSuggestions: false,
+      infoText: ''
     });
     this.props.updateEvents(suggestion);
   }
@@ -38,8 +51,11 @@ class CitySearch extends Component {
           value={this.state.query}
           placeholder="Enter City"
           onChange={this.handleInputChange}
-          onFocus={() => { this.setState({ showSuggestions: true }) }}
+          // onFocus={() => { this.setState({ showSuggestions: true }) }}
         />
+        <div>
+          <InfoAlert text={this.state.infoText} />
+        </div>
         <ul className="suggestions" style={this.state.showSuggestions ? {} : { display: 'none' }}>
           {this.state.suggestions.map((suggestion) => (
             <li 
