@@ -40,6 +40,7 @@ input[type="number"] {
   align-self: center;
   text-align: center;
   height: 38px;
+  position: relative;
 }
 
 .city {
@@ -135,7 +136,7 @@ input[type="number"] {
 
 .numberOfEvents {
   width: 200px;
-  margin: 20px auto;
+  margin: 35px auto;
   text-align: center;
 }
 
@@ -147,8 +148,9 @@ input[type="number"] {
   font-family: sans-serif;
 }
 
-.Alert {
- 
+.InfoAlert {
+  position: absolute;
+  top: 67px;
 }
 
 .data-vis-wrapper {

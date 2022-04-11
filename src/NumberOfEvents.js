@@ -36,9 +36,7 @@ render () {
         onChange={this.handleInputChanged}
         value={numberOfEvents}
       />
-      <div >
-        <ErrorAlert text={errorText} />
-      </div>
+      <ErrorAlert text={errorText} />
     </div>
   )
 }
