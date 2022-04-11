@@ -5,7 +5,7 @@ class CitySearch extends Component {
   state = { 
     query: '',
     suggestions: [],
-    numberOfEvents: 32,
+    numberOfEvents: '',
     showSuggestions: undefined
   }
 
@@ -26,7 +26,7 @@ class CitySearch extends Component {
         query: value,
         suggestions,
         infoText: '',
-        numberOfEvents: this.state.numberOfEvents
+        numberOfEvents: this.props.numberOfEvents
       });
     }
   }
