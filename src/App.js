@@ -27,10 +27,23 @@ class App extends Component {
     if ((code || isTokenValid) && this.mounted) {
       getEvents().then((events) => {
         if (this.mounted) {
-          this.setState({ events, locations: extractLocations(events) });
+          this.setState({
+            events: events.slice(0, this.state.numberOfEvents),
+            locations: extractLocations(events),
+          });
         }
-    }); }
+      });
+    } else {
+    getEvents().then((events) => {
+      if (this.mounted) {
+        this.setState({
+          events: events.slice(0, this.state.numberOfEvents),
+          locations: extractLocations(events),
+        });
+      }
+    });
   }
+}
 
   componentWillUnmount() {
     this.mounted = false;
@@ -75,7 +88,7 @@ class App extends Component {
   // }
   
   render() {
-  // if (this.state.showWelcomeScreen === undefined) return <div className="App" />
+  if (this.state.showWelcomeScreen === undefined && navigator.onLine) return <div className="App" />
 
   const { events, locations, numberOfEvents, showWelcomeScreen } = this.state;
 
