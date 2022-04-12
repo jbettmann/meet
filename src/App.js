@@ -34,6 +34,7 @@ class App extends Component {
         }
       });
     } else {
+    // If offline, skip to getEvents. This function grabs from localStorage when offline.
     getEvents().then((events) => {
       if (this.mounted) {
         this.setState({
