@@ -5,9 +5,27 @@
   width: 100vw;
   height: 100%;
   top: 0;
-  background: white;
+  background: #f3a5a5;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h4, h3, h2 {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.meet-logo {
+  color: white;
+  text-transform: uppercase;
+  font-size: 6rem;
+  margin: 0;
+}
+
+.button_cont{
+  margin-top: 10%;
 }
 .login-button {
   color: #494949;
@@ -42,7 +60,6 @@
   width: 40px;
   height: 40px;
   border-radius: 2px;
-  background-color: #fff;
 }
 .google-icon {
   position: absolute;

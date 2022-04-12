@@ -5,12 +5,14 @@ import './WelcomeScreen.css';
 function WelcomeScreen(props) {
   return props.showWelcomeScreen ?
     (
-      <div className="WelcomeScreen">
-        <h1>Welcome to the Meet app</h1>
+      <div class="WelcomeScreen">
+        <h2>Welcome to</h2>
+        <h1 class="meet-logo">Meet</h1>
         <h4>
-          Log in to see upcoming events around the world for full-stack developers
+          An app for full-stack developers <br/>
+          too see upcoming events around the world!
         </h4>
-        <div className="button_cont" align="center">
+        <div class="button_cont" align="center">
           <div class="google-btn">
             <div class="google-icon-wrapper">
               <img

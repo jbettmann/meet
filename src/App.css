@@ -214,14 +214,6 @@ input[type="number"] {
   width: 18px;
   height: 18px;
 }
-.btn-text {
-  float: right;
-  margin: 11px 11px 0 0;
-  color: #fff;
-  font-size: 14px;
-  letter-spacing: 0.2px;
-  font-family: "Roboto";
-}
 
 
 @media only screen and (max-width: 460px) {
