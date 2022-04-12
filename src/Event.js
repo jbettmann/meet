@@ -37,7 +37,7 @@ class Event extends Component {
 
       {!collapsed && (
         <div className={`extra-details ${this.state.collapsed ? "hide" : "show"}`}>
-          <h3>About the event:</h3>
+          <h3 className="about-event">About the event:</h3>
           <p className="event-description">{event.description}</p>
           <a href={event.htmlLink} rel="noreferrer" target="_blank">
             See details on Google Calendar

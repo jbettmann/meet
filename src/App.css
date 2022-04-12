@@ -18,7 +18,7 @@ ul {
   list-style: none;
 }
 
-h2, h3, a {
+.summary, .about-event, a {
   margin-left: 20px;
   margin-bottom: 15px;
 }
