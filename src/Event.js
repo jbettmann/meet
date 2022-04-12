@@ -24,7 +24,8 @@ class Event extends Component {
       </p>
 
       <p className="location">
-        @{event.summary} | {event.location}
+        @{event.summary} <br />
+        {event.location}
       </p>
 
       <button
