@@ -6,6 +6,7 @@ import NumberOfEvents from './NumberOfEvents';
 import { extractLocations, getEvents,checkToken, getAccessToken } from './api';
 import './nprogress.css';
 import WelcomeScreen from './WelcomeScreen';
+import { OfflineAlert } from './Alert'; 
 
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
           this.setState({
             events: events.slice(0, this.state.numberOfEvents),
             locations: extractLocations(events),
+            offlineText: ""
           });
         }
       });
@@ -40,6 +42,7 @@ class App extends Component {
         this.setState({
           events: events.slice(0, this.state.numberOfEvents),
           locations: extractLocations(events),
+          offlineText: "Your are currently offline. The data displayed might not be up-to-date.",
         });
       }
     });
@@ -91,11 +94,12 @@ class App extends Component {
   render() {
   if (this.state.showWelcomeScreen === undefined && navigator.onLine) return <div className="App" />
 
-  const { events, locations, numberOfEvents, showWelcomeScreen } = this.state;
+  const { events, locations, numberOfEvents, showWelcomeScreen, offlineText } = this.state;
 
   return (
     <> 
-      <div className="App">  
+      <div className="App"> 
+        <OfflineAlert text={offlineText} />
         <CitySearch updateEvents={this.updateEvents} locations={locations} numberOfEvents={numberOfEvents}/>
         <NumberOfEvents numberOfEvents={numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} events={events}/>
         <EventList events={events} />   
