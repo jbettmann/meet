@@ -55,7 +55,7 @@ export const getEvents = async () => {
   if (!navigator.onLine) {
     const data = localStorage.getItem("lastEvents");
     NProgress.done();
-    console.log(data);
+    console.log('offline:', data);
     return data ? JSON.parse(data).events:[];
     
   }
@@ -73,6 +73,7 @@ export const getEvents = async () => {
       localStorage.setItem("locations", JSON.stringify(locations));
     }
     NProgress.done();
+    console.log('online:', result.data);
     return result.data.events;
   }
 };
