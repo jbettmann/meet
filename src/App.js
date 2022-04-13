@@ -32,23 +32,33 @@ class App extends Component {
           this.setState({
             events: events.slice(0, this.state.numberOfEvents),
             locations: extractLocations(events),
-            offlineText: " ",
           });
         }
       });
-    } else {
-    // If offline, skip to getEvents. This function grabs from localStorage when offline.
-    getEvents().then((events) => {
-      if (this.mounted && !navigator.onLine) {
-        this.setState({
-          events: events.slice(0, this.state.numberOfEvents),
-          locations: extractLocations(events),
-          offlineText: "Your are currently offline. The data displayed might not be up-to-date.",
-        });
-      }
-    });
+   } if (!navigator.onLine) {
+     this.setState({
+      offlineText: "Your are currently offline. The data displayed might not be up-to-date.",
+     });
+   } else {
+    this.setState({
+      offlineText: " ",
+     });
+   }
   }
-}
+   
+   // else {
+  //   // If offline, skip to getEvents. This function grabs from localStorage when offline.
+  //   getEvents().then((events) => {
+  //     if (this.mounted && !navigator.onLine) {
+  //       this.setState({
+  //         events: events.slice(0, this.state.numberOfEvents),
+  //         locations: extractLocations(events),
+  //         offlineText: "Your are currently offline. The data displayed might not be up-to-date.",
+  //       });
+  //     }
+  //   });
+  // }
+
 
   componentWillUnmount() {
     this.mounted = false;
