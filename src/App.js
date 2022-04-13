@@ -15,6 +15,7 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 32,
+    offlineText: "Your are currently offline. The data displayed might not be up-to-date.",
     showWelcomeScreen: undefined,
   }
 
@@ -31,18 +32,11 @@ class App extends Component {
           this.setState({
             events: events.slice(0, this.state.numberOfEvents),
             locations: extractLocations(events),
+            offlineText: "",
           });
         }
       });
-   } if (navigator.onLine) {
-     this.setState({
-      offlineText: " ",  
-     });
-   } else {
-    this.setState({
-      offlineText: "Your are currently offline. The data displayed might not be up-to-date.",
-     });
-   }
+    }
   }
    
    // else {
