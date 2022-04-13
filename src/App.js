@@ -15,7 +15,7 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 32,
-    offlineText: "",
+    offlineText: '',
     showWelcomeScreen: undefined,
   }
 
@@ -32,14 +32,14 @@ class App extends Component {
           this.setState({
             events: events.slice(0, this.state.numberOfEvents),
             locations: extractLocations(events),
-            offlineText: ""
+            offlineText: " ",
           });
         }
       });
     } else {
     // If offline, skip to getEvents. This function grabs from localStorage when offline.
     getEvents().then((events) => {
-      if (this.mounted) {
+      if (this.mounted && !navigator.onLine) {
         this.setState({
           events: events.slice(0, this.state.numberOfEvents),
           locations: extractLocations(events),
