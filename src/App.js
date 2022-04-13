@@ -35,13 +35,13 @@ class App extends Component {
           });
         }
       });
-   } if (!navigator.onLine) {
+   } if (navigator.onLine) {
      this.setState({
-      offlineText: "Your are currently offline. The data displayed might not be up-to-date.",
+      offlineText: " ",  
      });
    } else {
     this.setState({
-      offlineText: " ",
+      offlineText: "Your are currently offline. The data displayed might not be up-to-date.",
      });
    }
   }
