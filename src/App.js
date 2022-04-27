@@ -25,6 +25,7 @@ class App extends Component {
     events: [],
     locations: [],
     numberOfEvents: 32,
+    currentLocation: 'all',
     showWelcomeScreen: undefined,
   }
 
@@ -39,7 +40,7 @@ class App extends Component {
       getEvents().then((events) => {
         if (this.mounted) {
           this.setState({
-            events: events.slice(0, this.state.numberOfEvents),
+            events,
             locations: extractLocations(events),
           });
         }
@@ -74,17 +75,16 @@ class App extends Component {
   }
 
   updateNumberOfEvents = (numberOfEvents) => {
-
     this.setState(
       {
         numberOfEvents,
       },
-      this.updateEvents(this.state.locations)
+      this.updateEvents(this.state.locations, numberOfEvents)
     );
     
   };
 
-  updateEvents = (location) => {
+  updateEvents = (location, eventCount) => {
     getEvents().then((events) => {
       const locationEvents =
         location === "all"
