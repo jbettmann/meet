@@ -17,6 +17,7 @@ import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
 import './nprogress.css';
 import WelcomeScreen from './WelcomeScreen';
 import { OfflineAlert } from './Alert'; 
+import EventGenre from './EventGenre';
 
 
 class App extends Component {
@@ -80,8 +81,7 @@ class App extends Component {
         numberOfEvents,
       },
       this.updateEvents(this.state.locations, numberOfEvents)
-    );
-    
+    );   
   };
 
   updateEvents = (location, eventCount) => {
@@ -133,15 +133,18 @@ class App extends Component {
         <OfflineAlert text={offlineText} />
         <CitySearch updateEvents={this.updateEvents} locations={locations} numberOfEvents={numberOfEvents}/>
         <NumberOfEvents numberOfEvents={numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} events={events}/>
-        <ResponsiveContainer className="scatter-chart" height={250}>
-          <ScatterChart margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="city" type="category" name="city" />
-            <YAxis dataKey="number" type="number" name="number of events" allowDecimals={false} />
-            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-            <Scatter data={this.getData()} fill="#8884d8" />
-          </ScatterChart>
-        </ResponsiveContainer>
+        <div className="data-vis-wrapper">
+          <EventGenre events={events} />
+          <ResponsiveContainer height={250}>
+            <ScatterChart margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="city" type="category" name="city" />
+              <YAxis dataKey="number" type="number" name="number of events" allowDecimals={false} />
+              <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+              <Scatter data={this.getData()} fill="#8884d8" />
+            </ScatterChart>
+          </ResponsiveContainer>
+        </div>
         <EventList events={events} />   
       </div>
       <WelcomeScreen showWelcomeScreen={showWelcomeScreen} getAccessToken={() => { getAccessToken() }}/>
