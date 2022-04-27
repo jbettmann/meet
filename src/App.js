@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {
+  ResponsiveContainer, // imported to make chart responsive
   ScatterChart, // imported as the container
   Scatter, // imported to draw the points
   XAxis, // imported for the horizontal axes respectively
   YAxis, // imported for the vertical axes respectively
-  ZAxis,
   Legend,
   CartesianGrid, // imported to draw the rectangular coordinate system
   Tooltip //  imported to reveal information about the chart on hover
@@ -133,15 +133,16 @@ class App extends Component {
         <OfflineAlert text={offlineText} />
         <CitySearch updateEvents={this.updateEvents} locations={locations} numberOfEvents={numberOfEvents}/>
         <NumberOfEvents numberOfEvents={numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} events={events}/>
-        <ScatterChart width={800} height={250}
-          margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="city" type="category" name="city" />
-          <YAxis dataKey="number" type="number" name="number of events" allowDecimals={false} />
-          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
-          <Legend verticalAlign="top" height={36} />
-          <Scatter data={this.getData()} fill="#8884d8" />
-        </ScatterChart>
+        <ResponsiveContainer className="scatter-chart" height={250}>
+          <ScatterChart margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="city" type="category" name="city" />
+            <YAxis dataKey="number" type="number" name="number of events" allowDecimals={false} />
+            <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+            <Legend verticalAlign="top" height={36} />
+            <Scatter data={this.getData()} fill="#8884d8" />
+          </ScatterChart>
+        </ResponsiveContainer>
         <EventList events={events} />   
       </div>
       <WelcomeScreen showWelcomeScreen={showWelcomeScreen} getAccessToken={() => { getAccessToken() }}/>

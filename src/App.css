@@ -89,6 +89,11 @@ input[type="number"] {
   background-color: #f3a5a5;
 }
 
+/* .scatter-chart {
+  display: flex;
+  justify-content: center;
+} */
+
 .EventList {
   display: flex;
   flex-direction: column;
