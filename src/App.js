@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
+import {
+  ScatterChart, // imported as the container
+  Scatter, // imported to draw the points
+  XAxis, // imported for the horizontal axes respectively
+  YAxis, // imported for the vertical axes respectively
+  ZAxis,
+  Legend,
+  CartesianGrid, // imported to draw the rectangular coordinate system
+  Tooltip //  imported to reveal information about the chart on hover
+} from 'recharts';
 import './App.css';
 import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
-import { extractLocations, getEvents,checkToken, getAccessToken } from './api';
+import { extractLocations, getEvents, checkToken, getAccessToken } from './api';
 import './nprogress.css';
 import WelcomeScreen from './WelcomeScreen';
 import { OfflineAlert } from './Alert'; 
@@ -89,6 +99,17 @@ class App extends Component {
     });
   };
 
+  getData = () => {
+    const {locations, events} = this.state;
+    const data = locations.map((location)=>{
+      const number = events.filter((event) => event.location === location).length
+      // split shortens location to just city name. returns and array. Then shift() array function to get first element in array, which is name of city
+      const city = location.split(', ').shift()
+      return {city, number};
+    })
+    return data;
+  };
+
   
   // updateEvents = (location) => {
   //   getEvents().then((events) => {
@@ -112,6 +133,15 @@ class App extends Component {
         <OfflineAlert text={offlineText} />
         <CitySearch updateEvents={this.updateEvents} locations={locations} numberOfEvents={numberOfEvents}/>
         <NumberOfEvents numberOfEvents={numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} events={events}/>
+        <ScatterChart width={800} height={250}
+          margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="city" type="category" name="city" />
+          <YAxis dataKey="number" type="number" name="number of events" allowDecimals={false} />
+          <Tooltip cursor={{ strokeDasharray: '3 3' }} />
+          <Legend verticalAlign="top" height={36} />
+          <Scatter data={this.getData()} fill="#8884d8" />
+        </ScatterChart>
         <EventList events={events} />   
       </div>
       <WelcomeScreen showWelcomeScreen={showWelcomeScreen} getAccessToken={() => { getAccessToken() }}/>
