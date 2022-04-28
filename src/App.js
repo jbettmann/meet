@@ -138,7 +138,7 @@ class App extends Component {
           <ResponsiveContainer height={250}>
             <ScatterChart margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="city" type="category" name="City:" />
+              <XAxis dataKey="city" type="category" name="City" />
               <YAxis dataKey="number" type="number" name="Number of Events" allowDecimals={false} />
               <Tooltip cursor={{ strokeDasharray: '3 3' }} />
               <Scatter data={this.getData()} fill="#8884d8" />
