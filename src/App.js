@@ -84,10 +84,10 @@ class App extends Component {
     );   
   };
 
-  updateCurrentLocation = (currentLocation) => {
+  updateCurrentLocation = (location) => {
     this.setState(
       {
-        currentLocation,
+        currentLocation: location,
       },
       () => this.updateEvents()
     );   
@@ -103,8 +103,7 @@ class App extends Component {
           : events.filter((event) => event.location === location);
       if (this.mounted) {
         this.setState({
-          events: locationEvents.slice(0, numberOfEvents),
-          currentLocation: location,
+          events: locationEvents.slice(0, numberOfEvents)
         });
       }
     });
