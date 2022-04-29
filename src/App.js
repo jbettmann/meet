@@ -80,11 +80,22 @@ class App extends Component {
       {
         numberOfEvents,
       },
-      this.updateEvents(this.state.locations, numberOfEvents)
+      () => this.updateEvents()
     );   
   };
 
-  updateEvents = (location, eventCount) => {
+  updateCurrentLocation = (currentLocation) => {
+    this.setState(
+      {
+        currentLocation,
+      },
+      () => this.updateEvents()
+    );   
+  };
+
+  updateEvents = () => {
+    const location =  this.state.currentLocation;
+    const numberOfEvents = this.state.numberOfEvents;
     getEvents().then((events) => {
       const locationEvents =
         location === "all"
@@ -92,7 +103,7 @@ class App extends Component {
           : events.filter((event) => event.location === location);
       if (this.mounted) {
         this.setState({
-          events: locationEvents.slice(0, this.state.numberOfEvents),
+          events: locationEvents.slice(0, numberOfEvents),
           currentLocation: location,
         });
       }
@@ -131,7 +142,7 @@ class App extends Component {
     <> 
       <div className="App"> 
         <OfflineAlert text={offlineText} />
-        <CitySearch updateEvents={this.updateEvents} locations={locations} numberOfEvents={numberOfEvents}/>
+        <CitySearch updateEvents={this.updateCurrentLocation} locations={locations} numberOfEvents={numberOfEvents}/>
         <NumberOfEvents numberOfEvents={numberOfEvents} updateNumberOfEvents={this.updateNumberOfEvents} events={events}/>
         <div className="data-vis-wrapper">
           <EventGenre events={events} />
